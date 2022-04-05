@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import cookie from 'react-cookies';
+// import './App.css';
+import {useSelector, useDispatch} from "react-redux";
+import SignIn from './components/SignIn';
+import {logInState} from "./actions/checkLogInState"
+
 
 function App() {
+  const logged = useSelector(state => state.isLogged);
+
+  const dispatch = useDispatch();
+
+  const logOutFunc = () => {
+    cookie.remove('userInfo');
+    dispatch(logInState());
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code>eman
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {
+        !logged &&
+        <SignIn />
+      }
+      {
+        logged &&
+        <>
+        <h2> Hello Man !! </h2>
+        <button onClick={logOutFunc}> Log Out </button>
+        </>
+      }
     </div>
   );
 }
