@@ -24,4 +24,10 @@ export const updatePosts = (data) => {
         paylod: data
     })
 }
-
+//action to add post 
+export const addPosts = (data) => {
+    return({
+        type: actions.ADD_POST,
+        paylod: data
+    })
+}

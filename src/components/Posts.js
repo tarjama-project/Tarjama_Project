@@ -60,8 +60,44 @@ export default function Posts() {
         dispatch(actions.updatePosts(testArr));
         showUpdateForm();
     }
+
+    //function to add new post 
+
+    const addPostHandler = async (e) => {
+        e.preventDefault();
+        let newPost = {
+            userId: myInfos.id,
+            id: posts.length + 1,
+            title: e.target.title.value,
+            body: e.target.body.value,
+            comments: []
+        }
+        console.log("New Post ==> ", newPost);
+        // here we will use the dispatch to update the data
+        // let testArr = await functions_Handeler.addPostFun(newPost, posts);
+        dispatch(actions.addPosts(newPost));
+    }
+
+
     return (
         <div>
+            <h3> Add New Post </h3>
+
+<Form onSubmit={addPostHandler}>
+    <FormGroup>
+        <Form.Label>Title: </Form.Label>
+        <Form.Control as="textarea" placeholder='Title ...' name="title" type="text" />
+    </FormGroup>
+
+    <FormGroup>
+        <Form.Label>Body: </Form.Label>
+        <Form.Control as="textarea" placeholder='Post Body ...' name="body" type="text" />
+    </FormGroup>
+
+    <Button type="submit" variant="primary">
+        Add
+    </Button>
+</Form>
             {
                 posts.map((myPost, idx) => {
                     return (

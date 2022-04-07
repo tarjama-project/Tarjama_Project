@@ -9,3 +9,4 @@ export const REMOVE_INFO = "REMOVE_INFO";
 export const GET_POSTS = "GET_POSTS";
 export const DELETE_POSTS = "DELETE_POSTS";
 export const UPDATE_POST="UPDATE_POST"
+export const ADD_POST = "ADD_POST";

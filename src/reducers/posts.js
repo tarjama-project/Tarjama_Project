@@ -8,6 +8,9 @@ const postsState = (state =[], action) => {
                 return action.paylod;
                 case actions.UPDATE_POST:
                     return action.paylod;
+                    case actions.ADD_POST:
+                        return [action.paylod,...state];
+
 
             default:
             return state;
