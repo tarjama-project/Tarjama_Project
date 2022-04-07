@@ -1,19 +1,23 @@
 // import logo from './logo.svg';
 import cookie from 'react-cookies';
 // import './App.css';
-import {useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import SignIn from './components/SignIn';
 import { logOut, user_Delete_Info } from "./actions/signIn"
-import {logInState} from "./actions/checkLogInState"
+import { logInState } from "./actions/checkLogInState"
 import Header from './components/Header';
 import Posts from './components/Posts';
+import LeftBar from './components/LeftBar'
+import Profile from './components/Profile'
+import Users from  './components/Users'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const logged = useSelector(state => state.isLogged);
 
   const dispatch = useDispatch();
 
-  
+
   const logOutFunc = () => {
     cookie.remove('userInfo');
     dispatch(logOut());
@@ -29,22 +33,28 @@ function App() {
       {
         logged &&
         <>
+          <BrowserRouter>
+            <Header />
+            <div>
+              <LeftBar />
 
-          <Header />
-          <div>
-            <section>
-              <button onClick={logOutFunc}> Users </button>
-              <button onClick={logOutFunc}> Posts </button>
-
-              <button onClick={logOutFunc}> Log Out </button>
-            </section>
-            <section>
-              <Posts />
-            </section>
-          </div>
+              <a onClick={logOutFunc}> Log Out </a>
 
 
+              <Routes>
+                <Route path="/" element={<Posts />}> </Route>
+                <Route path="/posts" element={<Posts />}> </Route>
+                <Route path="/profile" element={<Profile />}></Route>
+
+                <Route path="/users" element={<Users />}></Route>
+
+              </Routes>
+
+            </div>
+
+          </BrowserRouter>
         </>
+
       }
     </div>
   );
