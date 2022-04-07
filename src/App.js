@@ -6,6 +6,7 @@ import SignIn from './components/SignIn';
 import { logOut, user_Delete_Info } from "./actions/signIn"
 import {logInState} from "./actions/checkLogInState"
 import Header from './components/Header';
+import Posts from './components/Posts';
 
 function App() {
   const logged = useSelector(state => state.isLogged);
@@ -37,9 +38,9 @@ function App() {
 
               <button onClick={logOutFunc}> Log Out </button>
             </section>
-            {/* <section>
+            <section>
               <Posts />
-            </section> */}
+            </section>
           </div>
 
 

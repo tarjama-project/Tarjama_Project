@@ -13,3 +13,29 @@ export const checkUser= async (data)=>{
     })
     return testUser
 }
+//function to retrive all posts from API
+export const getPosts = async() => {
+    let resPosts = await axios.get(`${API}/posts`);
+    let resComments = await axios.get(`${API}/comments`);
+
+    
+    let posts = resPosts.data;
+    let comments = resComments.data;
+
+    // console.log("Posts -=> ",posts);
+    // console.log("Comments -=> ",comments);
+    
+    for(let i=0;i<posts.length;i++){
+        posts[i].comments = [];
+        await comments.find(function(ele){
+            if(ele.postId == posts[i].id)
+            {
+                posts[i].comments.push(ele)
+            }
+        })
+    }
+    // console.log("Posts -=> ",posts);
+    // console.log("Comments -=> ",comments);
+
+    return (posts);
+}
