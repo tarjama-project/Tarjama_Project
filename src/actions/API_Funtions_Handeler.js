@@ -70,3 +70,13 @@ export const updatePostFun = ( udpatedPost,arrPost) => {
     // console.log("posts", result);
     return result
 }
+//function to get all albums
+export const allAlbums = async() => {
+    let albums = await axios.get(`${API}/albums`);
+    return albums.data;
+}
+export const allUsers = async()=>{
+    let users = await axios.get(`${API}/users`);
+    
+    return users.data;
+}

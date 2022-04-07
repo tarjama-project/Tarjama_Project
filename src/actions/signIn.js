@@ -33,3 +33,10 @@ export const user_Update_Info = (data) => {
         paylod: data
     })
 }
+
+export const allUsers = (data) => {
+    return({
+        type: actions.ALL_USERS,
+        paylod: data
+    })
+}

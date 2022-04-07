@@ -10,3 +10,8 @@ export const GET_POSTS = "GET_POSTS";
 export const DELETE_POSTS = "DELETE_POSTS";
 export const UPDATE_POST="UPDATE_POST"
 export const ADD_POST = "ADD_POST";
+
+//all user 
+export const ALL_USERS="ALL_USERS";
+//all albums
+export const ALL_ALBUMS="ALL_ALBUMS";
