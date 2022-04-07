@@ -51,3 +51,22 @@ export const getPosts = async() => {
      return arr
 
  }
+
+ 
+// function Update post   
+
+export const updatePostFun = ( udpatedPost,arrPost) => {
+    // console.log("udpatedPost", udpatedPost);
+    // console.log("arrPost", arrPost);
+    let result = [];
+
+    for(let i=0;i<arrPost.length;i++){
+        if(arrPost[i].id == udpatedPost.id){
+            result.push(udpatedPost)
+        }else{
+            result.push(arrPost[i])
+        }
+    }
+    // console.log("posts", result);
+    return result
+}

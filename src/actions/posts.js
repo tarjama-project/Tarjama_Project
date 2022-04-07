@@ -17,3 +17,11 @@ export const deletePosts=(data)=>{
     })
 }
 
+//action update post 
+export const updatePosts = (data) => {
+    return({
+        type: actions.UPDATE_POST,
+        paylod: data
+    })
+}
+

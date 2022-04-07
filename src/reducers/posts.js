@@ -6,6 +6,8 @@ const postsState = (state =[], action) => {
             return action.paylod;
             case actions.DELETE_POSTS:
                 return action.paylod;
+                case actions.UPDATE_POST:
+                    return action.paylod;
 
             default:
             return state;
