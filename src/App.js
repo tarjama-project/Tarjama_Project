@@ -3,19 +3,21 @@ import cookie from 'react-cookies';
 // import './App.css';
 import {useSelector, useDispatch} from "react-redux";
 import SignIn from './components/SignIn';
+import { logOut, user_Delete_Info } from "./actions/signIn"
 import {logInState} from "./actions/checkLogInState"
-
+import Header from './components/Header';
 
 function App() {
   const logged = useSelector(state => state.isLogged);
 
   const dispatch = useDispatch();
 
+  
   const logOutFunc = () => {
     cookie.remove('userInfo');
-    dispatch(logInState());
+    dispatch(logOut());
+    dispatch(user_Delete_Info());
   }
-
   return (
     <div className="App">
 
@@ -26,8 +28,21 @@ function App() {
       {
         logged &&
         <>
-        <h2> Hello Man !! </h2>
-        <button onClick={logOutFunc}> Log Out </button>
+
+          <Header />
+          <div>
+            <section>
+              <button onClick={logOutFunc}> Users </button>
+              <button onClick={logOutFunc}> Posts </button>
+
+              <button onClick={logOutFunc}> Log Out </button>
+            </section>
+            {/* <section>
+              <Posts />
+            </section> */}
+          </div>
+
+
         </>
       }
     </div>
