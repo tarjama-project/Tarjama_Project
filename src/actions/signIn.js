@@ -21,6 +21,7 @@ export const userInfo = (data) => {
     })
 }
 export const user_Update_Info = (data) => {
+    cookie.save('userInfo', JSON.stringify(data));
     return({
         type: actions.UPDATA_INFO,
         paylod: data

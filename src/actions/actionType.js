@@ -7,3 +7,4 @@ export const REMOVE_INFO = "REMOVE_INFO";
 
 // actions to posts 
 export const GET_POSTS = "GET_POSTS";
+export const DELETE_POSTS = "DELETE_POSTS";

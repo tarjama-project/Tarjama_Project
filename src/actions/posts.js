@@ -1,5 +1,6 @@
 
 import * as actions from "./actionType";
+//actions to retrive post
 
 export const getPosts = (data) => {
     
@@ -8,3 +9,11 @@ export const getPosts = (data) => {
             paylod:data 
         })
 }
+//action to delete post 
+export const deletePosts=(data)=>{
+    return({
+        type: actions.DELETE_POSTS,
+        paylod:data 
+    })
+}
+

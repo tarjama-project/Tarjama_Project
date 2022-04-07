@@ -4,6 +4,9 @@ const postsState = (state =[], action) => {
     switch (action.type) {
         case actions.GET_POSTS:
             return action.paylod;
+            case actions.DELETE_POSTS:
+                return action.paylod;
+
             default:
             return state;
     }

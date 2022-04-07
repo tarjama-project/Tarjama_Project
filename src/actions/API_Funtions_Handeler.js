@@ -22,8 +22,8 @@ export const getPosts = async() => {
     let posts = resPosts.data;
     let comments = resComments.data;
 
-    // console.log("Posts -=> ",posts);
-    // console.log("Comments -=> ",comments);
+     console.log("Posts -=> ",posts);
+     console.log("Comments -=> ",comments);
     
     for(let i=0;i<posts.length;i++){
         posts[i].comments = [];
@@ -39,3 +39,15 @@ export const getPosts = async() => {
 
     return (posts);
 }
+
+//function handeler to delete post 
+ export const deletePostFun =async(arrPost,idx )=>{
+    console.log(arrPost,'🙌👍😁')
+     let arr=arrPost.filter((value,idnx)=>{
+         return idx !==value.id 
+     })
+     console.log("posts",arr );
+     
+     return arr
+
+ }
