@@ -18,12 +18,11 @@ export const getPosts = async() => {
     let resPosts = await axios.get(`${API}/posts`);
     let resComments = await axios.get(`${API}/comments`);
 
-    
     let posts = resPosts.data;
     let comments = resComments.data;
 
-     console.log("Posts -=> ",posts);
-     console.log("Comments -=> ",comments);
+    // console.log("Posts -=> ",posts);
+    // console.log("Comments -=> ",comments);
     
     for(let i=0;i<posts.length;i++){
         posts[i].comments = [];

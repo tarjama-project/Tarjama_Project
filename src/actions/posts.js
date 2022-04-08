@@ -2,6 +2,7 @@
 import * as actions from "./actionType";
 //actions to retrive post
 
+
 export const getPosts = (data) => {
     
     return({

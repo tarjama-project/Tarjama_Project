@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 export default function Posts() {
 
     const posts = useSelector(state => state.postsState);
+    console.log("posttt",posts)
     const myInfos = useSelector(state => state.userInfoState);
     const dispatch = useDispatch();
 
@@ -106,6 +107,7 @@ export default function Posts() {
             <div class="grid grid-cols-3 gap-4 place-items-start  ..." >
             {
                     posts.map((myPost, idx) => {
+                        console.log(myPost)
                         return (
                             <div key={idx}>
                                 {/* <h2>{myPost.title}</h2>
