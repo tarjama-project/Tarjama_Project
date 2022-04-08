@@ -74,9 +74,9 @@ export default function Users() {
 
                                         <div class="justify-start px-6 py-4 " >
 
-                                  <b class="justify-star">Name:</b>{user.name}<br></br>
+                                        <div class="flex justify-start " >Name:{user.name}</div><br></br>
 
-                                       <b class="justify-star">Email:</b>{user.email}<br></br>
+                                        <div class="flex justify-start " >Email:</div>{user.email}<br></br>
 
                                       <b>Phone:</b> {user.phone}<br></br>
                                        <b> Albums.No:</b> {user.albums}<br></br>

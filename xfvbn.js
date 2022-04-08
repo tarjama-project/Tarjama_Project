@@ -53,10 +53,8 @@ export default function Profile() {
 
     return (
         <div>
-<h1   class="font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600">Profile </h1>
-<br>
-</br>
-<button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-12" id="updateFormSpan" onClick={showUbdateForm}>Update Info</button>
+<h1 class="font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600">Profile </h1>
+<button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Update Info</button>
 
             <div class="grid grid-cols-3 gap-4 flex items-center">
                 <div class="mb-4">

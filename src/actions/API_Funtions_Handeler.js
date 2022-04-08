@@ -80,3 +80,15 @@ export const allUsers = async()=>{
     
     return users.data;
 }
+export const updateUsers = async(person, users)=>{
+    let resultArr = [];
+    for(let i=0;i<users.length;i++){
+        if(users[i].id == person.id){
+            resultArr.push(person)
+        }else{
+            resultArr.push(users[i])
+        }
+    }
+
+    return resultArr;
+}

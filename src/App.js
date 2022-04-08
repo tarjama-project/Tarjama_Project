@@ -28,8 +28,12 @@ function App() {
     <div className="App">
 
       {
+    
         !logged &&
+       
         <SignIn />
+        
+        
       }
       {
         logged &&
