@@ -13,17 +13,17 @@ export default function Posts() {
 
 
 
-    useEffect(() => {
-        async function fetchData() {
-            if (posts.length === 0) {
-                const posts_Data = await functions_Handeler.getPosts();
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         if (posts.length === 0) {
+    //             const posts_Data = await functions_Handeler.getPosts();
 
-                dispatch(actions.getPosts(posts_Data));
-            }
+    //             dispatch(actions.getPosts(posts_Data));
+    //         }
 
-        }
-        fetchData();
-    }, [])
+    //     }
+    //     fetchData();
+    // }, [])
 
 
     //function delete posts 
@@ -177,14 +177,14 @@ export default function Posts() {
 
 
             </div>
-            <div class="grid grid-cols-3 gap-4 place-items-start  ..." >
+            <div class="  grid grid-cols-3 gap-4 place-items-start  ..." >
                 {
                     posts.map((myPost, idx) => {
                         return (
                             <div key={idx}>
                                 {/* <h2>{myPost.title}</h2>
                             <p>{myPost.body}</p> */}
-                                <div class="  max-w-sm rounded overflow-hidden shadow-lg ">
+                                <div class=" h-120 w-100  max-w-sm rounded overflow-hidden shadow-lg ">
 
                                     <div class="px-6 py-4 " >
                                         <div class="font-bold text-xl mb-2">{myPost.title}</div>
@@ -221,7 +221,7 @@ export default function Posts() {
                                     {
                                         myPost.userId == myInfos.id &&
                                         <>
-                                            <button className='class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"' onClick={() => deletePost(myPost.id)}> Delete </button>
+                                            <button className='class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded h-100"' onClick={() => deletePost(myPost.id)}> Delete </button>
                                             <button className='class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"' onClick={() => showUpdateForm(myPost)}> Update </button>
                                         </>
                                     }

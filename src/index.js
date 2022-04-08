@@ -9,14 +9,28 @@ import { createStore, applyMiddleware } from 'redux';
 import cookie from 'react-cookies';
 // import store from "./store/store"
 import {logInState} from "./actions/checkLogInState"
-import './index.css'
+import * as signInFunctions from "./actions/signIn"
+import storage from 'redux-persist/lib/storage'
+import { persistStore, persistReducer } from 'redux-persist'
 
-import 'flowbite';
-const store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, allReducers)
+
+const store = createStore(persistedReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+let persistor = persistStore(store);
 
 const userInfo = cookie.load('userInfo');
 // console.log(userInfo);
-store.dispatch(logInState(userInfo))
+if(userInfo){
+  store.dispatch(logInState(userInfo));
+  store.dispatch(signInFunctions.userInfo(userInfo));
+}
+
+
 
 ReactDOM.render(
   <Provider store={store}>

@@ -58,26 +58,43 @@ export default function Users() {
         }
         fetchData();
     }, [])
-    
+
     return (
         <div>
             <h1>Users</h1>
 
-            <ul>
-            {
-                usersMap.map((user,idx)=>{
-                    return(
-                        <li key={idx}>
-                            <h3><b>Name:</b> {user.name}</h3>
-                            <p><b>Email:</b> {user.email}</p>
-                            <p><b>Phone:</b> {user.phone}</p>
-                            <p><b>Albums.No:</b> {user.albums}</p>
-                            <p><b>Posts.No:</b> {user.posts}</p>
-                        </li>
-                    )
-                })
-            }
-            </ul>
+           
+                <div class="grid grid-cols-4 gap-4 place-items-start  ..." >
+
+                    {
+                        usersMap.map((user, idx) => {
+                            return (
+                                <div key={idx}>
+                                    <div class="  w-60 justify-center max-w-sm rounded overflow-hidden shadow-lg ">
+
+                                        <div class="justify-start px-6 py-4 " >
+
+                                  <b class="justify-star">Name:</b>{user.name}<br></br>
+
+                                       <b class="justify-star">Email:</b>{user.email}<br></br>
+
+                                      <b>Phone:</b> {user.phone}<br></br>
+                                       <b> Albums.No:</b> {user.albums}<br></br>
+                                        <b>Posts.No:</b> {user.posts} 
+                                          
+                                           
+                                        </div>
+                                        {/* <h3><b>Name:</b> {user.name}</h3>
+                                        <p><b>Email:</b> {user.email}</p>
+                                        <p><b>Phone:</b> {user.phone}</p>
+                                        <p><b>Albums.No:</b> {user.albums}</p>
+                                        <p><b>Posts.No:</b> {user.posts}</p> */}
+                                </div>
+                                </div>
+                            )
+                        })
+                    }
+           </div>
         </div>
     )
 
