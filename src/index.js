@@ -9,8 +9,9 @@ import { createStore, applyMiddleware } from 'redux';
 import cookie from 'react-cookies';
 // import store from "./store/store"
 import {logInState} from "./actions/checkLogInState"
+import './index.css'
 
-
+import 'flowbite';
 const store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 const userInfo = cookie.load('userInfo');

@@ -11,7 +11,9 @@ import LeftBar from './components/LeftBar'
 import Profile from './components/Profile'
 import Users from  './components/Users'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+import './App.css'
 function App() {
   const logged = useSelector(state => state.isLogged);
 
@@ -26,19 +28,29 @@ function App() {
   return (
     <div className="App">
 
+
+      
+      
+
       {
         !logged &&
+        
         <SignIn />
+        
+      
       }
       {
         logged &&
         <>
           <BrowserRouter>
             <Header />
+            
             <div>
               <LeftBar />
+             
 
               <a onClick={logOutFunc}> Log Out </a>
+              
 
 
               <Routes>
